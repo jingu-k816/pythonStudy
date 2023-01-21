@@ -73,3 +73,14 @@ elif winning_number < 7:
     print("Winning number is less than 7")
 else:
     print("Winning number is 10")
+
+age = int(input("how old are you?"))
+
+if age < 18:
+    print("you cannot drink")
+elif age >= 18 and age <= 35:
+    print("you drink beer!")
+elif age == 60 or age == 70:
+    print("Birthday Party!")
+else:
+    print("Go ahead!")
