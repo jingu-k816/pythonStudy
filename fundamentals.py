@@ -30,9 +30,7 @@ def say_bye(message):
 say_bye("Bye Jingu!")
 
 def tax_calculator(income, tax_rate):
-    print(income * tax_rate/100)
-
-tax_calculator(50000, 21)
+    return income * (tax_rate/100)
 
 def addition(a, b):
     print(a + b)
@@ -50,3 +48,17 @@ def squared(base, exponent):
     print(base ** exponent)
 
 squared(3, 3)
+
+def pay_tax(tax):
+    print("thank you for paying", tax)
+
+amount_to_pay = tax_calculator(50000, 21)
+pay_tax(amount_to_pay)
+
+my_name = "Jingu"
+my_age = 27
+my_eye_color = "black"
+
+# f-strings
+print(f"Hello I'm {my_name}, I am {my_age} years old and my eye color is {my_eye_color}")
+
