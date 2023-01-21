@@ -27,4 +27,26 @@ say_hello()
 def say_bye(message):
     print("Someone said:", message)
 
-say_bye("Hello Jingu!")
+say_bye("Bye Jingu!")
+
+def tax_calculator(income, tax_rate):
+    print(income * tax_rate/100)
+
+tax_calculator(50000, 21)
+
+def addition(a, b):
+    print(a + b)
+
+def subtraction(a, b):
+    print(a - b)
+
+def multiplication(a, b):
+    print(a * b)
+
+def division(a, b):
+    print(a / b)
+
+def squared(base, exponent):
+    print(base ** exponent)
+
+squared(3, 3)
