@@ -62,3 +62,14 @@ my_eye_color = "black"
 # f-strings
 print(f"Hello I'm {my_name}, I am {my_age} years old and my eye color is {my_eye_color}")
 
+if 10 > 5 :
+    print("Correct!")
+
+winning_number = 10
+
+if winning_number > 7:
+    print("Winning number is greater than 7")
+elif winning_number < 7:
+    print("Winning number is less than 7")
+else:
+    print("Winning number is 10")
