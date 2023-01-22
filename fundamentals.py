@@ -117,3 +117,23 @@ days_of_week = ["Mon", "Tues", "Wed", "Thurs", "Fri"]
 days_of_week.append("Sat")
 days_of_week.append("Sun")
 print(days_of_week[2])
+
+# Tuple & Dictionary (equivalent to object in JS)
+# Tuple is immutable list.
+days = ("Mon", "Tue", "Wed", "Thurs")
+
+player = {
+    "name": "Jingu",
+    "age": 26,
+    "alive": True,
+    "fav_food": ["Pizza", "Burger"]
+}
+
+print(player)
+player.pop("name")
+print(player)
+player["name"] = "Jingu"
+print(player)
+player["fav_food"].append("Ramen")
+print(player)
+
