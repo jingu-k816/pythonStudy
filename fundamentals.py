@@ -87,7 +87,7 @@ else:
 """
 # Casino Game
 from random import randint
-
+"""
 computer_choice = randint(1, 10)
 playing = True
 
@@ -109,4 +109,11 @@ distance = 0
 while distance < 20:
     print("I'm running:", distance, "km")
     distance = distance + 1
+"""
+# List & Method
+days_of_week = ["Mon", "Tues", "Wed", "Thurs", "Fri"]
 
+# days_of_week.clear() # Mutates the original list
+days_of_week.append("Sat")
+days_of_week.append("Sun")
+print(days_of_week[2])
