@@ -87,17 +87,22 @@ else:
 """
 # Casino Game
 from random import randint
-"""
-user_choice = int(input("Choose a number: "))
-computer_choice = randint(1, 50)
 
-if user_choice == computer_choice:
-    print("You won!")
-elif user_choice > computer_choice:
-    print("Lower! Computer chose:", computer_choice)
-elif user_choice < computer_choice:
-    print("higher! Computer chose:", computer_choice)
-"""
+computer_choice = randint(1, 10)
+playing = True
+
+print("Welcome to Python Casino!")
+
+while playing:
+    user_choice = int(input("Choose a number: "))
+    if user_choice == computer_choice:
+        print("You won!")
+        playing = False
+    elif user_choice > computer_choice:
+        print("Lower!")
+    elif user_choice < computer_choice:
+        print("Higher!")
+
 # While
 distance = 0
 
