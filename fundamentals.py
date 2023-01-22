@@ -138,6 +138,7 @@ player["fav_food"].append("Ramen")
 print(player)
 
 # For loop
+from requests import get
 
 websites = (
     "google.com",
@@ -150,3 +151,5 @@ websites = (
 for website in websites:
     if not website.startswith("https://"):
         website = f"https://{website}"
+    response = get(website)
+    print(response.status_code)
