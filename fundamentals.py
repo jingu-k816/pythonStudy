@@ -73,28 +73,35 @@ elif winning_number < 7:
     print("Winning number is less than 7")
 else:
     print("Winning number is 10")
+"""
+age = int(input("how old are you?"))
 
-#age = int(input("how old are you?"))
-
-# if age < 18:
-#     print("you cannot drink")
-# elif age >= 18 and age <= 35:
-#     print("you drink beer!")
-# elif age == 60 or age == 70:
-#     print("Birthday Party!")
-# else:
-#     print("Go ahead!")
-
+if age < 18:
+    print("you cannot drink")
+elif age >= 18 and age <= 35:
+    print("you drink beer!")
+elif age == 60 or age == 70:
+    print("Birthday Party!")
+else:
+    print("Go ahead!")
+"""
 # Casino Game
 from random import randint
+"""
+user_choice = int(input("Choose a number: "))
+computer_choice = randint(1, 50)
 
-# user_choice = int(input("Choose a number: "))
-# computer_choice = randint(1, 50)
+if user_choice == computer_choice:
+    print("You won!")
+elif user_choice > computer_choice:
+    print("Lower! Computer chose:", computer_choice)
+elif user_choice < computer_choice:
+    print("higher! Computer chose:", computer_choice)
+"""
+# While
+distance = 0
 
-# if user_choice == computer_choice:
-#     print("You won!")
-# elif user_choice > computer_choice:
-#     print("Lower! Computer chose:", computer_choice)
-# elif user_choice < computer_choice:
-#     print("higher! Computer chose:", computer_choice)
+while distance < 20:
+    print("I'm running:", distance, "km")
+    distance = distance + 1
 
