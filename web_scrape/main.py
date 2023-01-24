@@ -1,5 +1,6 @@
 from wework_remote import extract_wwr_jobs
 from indeed import extract_indeed_jobs
+from file import save_to_file
 
 keyword = input("What do you want to search for?")
 
@@ -8,11 +9,4 @@ indeedJobs = extract_indeed_jobs(keyword)
 
 jobs = indeedJobs + wwJobs
 
-file = open(f"{keyword}_jobs.csv", "w")
-
-file.write("Position,Company,Location,URL\n")
-
-for job in jobs:
-    file.write(f"{job['position']},{job['company']},{job['location']},{job['link']}\n")
-
-file.close()
+save_to_file(keyword, jobs)
