@@ -51,15 +51,15 @@ def extract_indeed_jobs(keyword):
             if zone == None:
                 anchor = job.select_one("h2 a")
                 title = job.find("h2", class_="jobTitle")
-                link = anchor['href']
+                link = anchor["href"]
                 company = job.find("span", class_="companyName")
                 location = job.find("div", class_="companyLocation")
 
                 job_data = {
-                    'link': f"https://ca.indeed.com{link}",
-                    'company': company.string.replace(",", " "),
-                    'location': location.string.replace(",", " "),
-                    'position': title.string.replace(",", " ")
+                    "link": f"https://ca.indeed.com{link}",
+                    "company": company.string.replace(",", " "),
+                    "location": location.string.replace(",", " "),
+                    "position": title.string.replace(",", " ")
                 }
                 results.append(job_data)
     return results
