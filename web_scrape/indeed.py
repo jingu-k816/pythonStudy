@@ -20,6 +20,7 @@ def get_page_count(keyword):
     pages = pagination.find_all("div", recursive=False)
     count = len(pages)
     if count >= 5:
+        # limit to 5 pages for study purposes but could search for pagination-next to move to the next page until the last page
         return 5
     else:
         return count
@@ -56,9 +57,9 @@ def extract_indeed_jobs(keyword):
 
                 job_data = {
                     'link': f"https://ca.indeed.com{link}",
-                    'company': company.string,
-                    'location': location.string,
-                    'position': title.string
+                    'company': company.string.replace(",", " "),
+                    'location': location.string.replace(",", " "),
+                    'position': title.string.replace(",", " ")
                 }
                 results.append(job_data)
     return results
