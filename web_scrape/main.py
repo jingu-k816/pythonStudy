@@ -10,6 +10,8 @@ from flask import Flask, render_template, request
 
 app = Flask("JobScrapper", template_folder="web_scrape/templates")
 
+db = {}
+
 @app.route("/")
 def home():
     return render_template("home.html", name="Jingu")
@@ -17,11 +19,14 @@ def home():
 @app.route("/search")
 def search():
     keyword = request.args.get("keyword")
-    wwJobs = extract_wwr_jobs(keyword)
-    indeedJobs = extract_indeed_jobs(keyword)
+    if keyword in db:
+        jobs = db[keyword]
+    else:
+        wwJobs = extract_wwr_jobs(keyword)
+        indeedJobs = extract_indeed_jobs(keyword)
 
-    jobs = indeedJobs + wwJobs
-
+        jobs = indeedJobs + wwJobs
+        db[keyword] = jobs
     return render_template("search.html", keyword=keyword, jobs=jobs)
 
 app.run()
