@@ -6,7 +6,7 @@ from file import save_to_file
 
 # save_to_file(keyword, jobs)
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect,send_file
 
 app = Flask("JobScrapper", template_folder="web_scrape/templates")
 
@@ -32,4 +32,15 @@ def search():
         db[keyword] = jobs
     return render_template("search.html", keyword=keyword, jobs=jobs)
 
+@app.route("/export")
+def export():
+    keyword = request.args.get("keyword")
+    if keyword == None:
+        return redirect("/")
+    
+    if keyword not in db:
+        return redirect(f"/search?keyword={keyword}")
+    save_to_file(keyword, db[keyword])
+
+    return send_file(f"{keyword}.csv", as_attachment=True)
 app.run()
