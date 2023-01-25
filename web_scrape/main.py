@@ -6,7 +6,7 @@ from file import save_to_file
 
 # save_to_file(keyword, jobs)
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask("JobScrapper", template_folder="web_scrape/templates")
 
@@ -19,6 +19,9 @@ def home():
 @app.route("/search")
 def search():
     keyword = request.args.get("keyword")
+    if keyword == None:
+        return redirect("/")
+    
     if keyword in db:
         jobs = db[keyword]
     else:
