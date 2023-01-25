@@ -4,8 +4,6 @@ from file import save_to_file
 
 # keyword = input("What do you want to search for?")
 
-
-
 # save_to_file(keyword, jobs)
 
 from flask import Flask, render_template, request
@@ -24,6 +22,6 @@ def search():
 
     jobs = indeedJobs + wwJobs
 
-    return render_template("search.html", keyword=keyword)
+    return render_template("search.html", keyword=keyword, jobs=jobs)
 
 app.run()
