@@ -42,5 +42,5 @@ def export():
         return redirect(f"/search?keyword={keyword}")
     save_to_file(keyword, db[keyword])
 
-    return send_file(f"{keyword}.csv", as_attachment=True)
+    return send_file(f"{keyword}_jobs.csv", as_attachment=True)
 app.run()
